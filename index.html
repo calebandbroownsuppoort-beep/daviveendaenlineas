@@ -1,5 +1,771 @@
 
-<!-- RODAPÉ INSTITUCIONAL -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petit Maison | Moda Infantil e Enxoval</title>
+<meta name="description" content="Vitrine demonstrativa de moda infantil, enxoval para bebês e artigos para casa.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+<style>
+:root {
+  --brown:#685347;
+  --dark:#342a25;
+  --beige:#eee5da;
+  --cream:#faf7f3;
+  --rose:#d9b8ac;
+  --gray:#81776e;
+}
+
+* { box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  margin:0;
+  color:var(--dark);
+  background:#fff;
+  font-family:'DM Sans',sans-serif;
+}
+
+a { color:inherit; text-decoration:none; }
+a:hover { color:var(--brown); }
+
+img { max-width:100%; }
+
+.notice {
+  background:#eee9e3;
+  padding:9px 15px;
+  font-size:11px;
+  color:#665b53;
+  text-align:center;
+}
+
+.topbar {
+  background:var(--brown);
+  color:white;
+  text-align:center;
+  padding:11px;
+  font-size:11px;
+  letter-spacing:1px;
+}
+
+.header {
+  background:white;
+  border-bottom:1px solid #eee7df;
+}
+
+.brand {
+  font-family:'Playfair Display',serif;
+  font-size:35px;
+  color:var(--brown);
+  font-weight:600;
+}
+
+.brand small {
+  display:block;
+  font-family:'DM Sans',sans-serif;
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  text-align:center;
+}
+
+.search {
+  width:100%;
+  padding:13px 16px;
+  border:1px solid #e8e0d8;
+  background:#faf8f5;
+  outline:none;
+  font-size:13px;
+}
+
+.header-icons a {
+  margin-left:17px;
+  font-size:21px;
+}
+
+.navbar {
+  border-top:1px solid #f0ebe5;
+}
+
+.nav-link {
+  font-size:12px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin:0 11px;
+}
+
+.hero {
+  min-height:620px;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(90deg,
+      rgba(250,247,243,.98),
+      rgba(250,247,243,.85),
+      rgba(250,247,243,.12)),
+    url('https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+}
+
+.hero-content { max-width:600px; }
+
+.eyebrow {
+  color:#a68a7b;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:2.5px;
+  font-weight:700;
+}
+
+.hero h1 {
+  font-family:'Playfair Display',serif;
+  color:var(--brown);
+  font-size:clamp(45px,6vw,76px);
+  line-height:1.15;
+  margin:20px 0;
+}
+
+.hero p {
+  font-size:14px;
+  color:#65594f;
+  line-height:1.9;
+}
+
+.btn-shop {
+  display:inline-block;
+  background:var(--brown);
+  color:white;
+  padding:15px 28px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  transition:.3s;
+}
+
+.btn-shop:hover {
+  background:#987b69;
+  color:white;
+}
+
+.section { padding:80px 0; }
+
+.section-heading {
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-heading h2 {
+  font-family:'Playfair Display',serif;
+  color:var(--brown);
+  font-size:clamp(34px,4vw,48px);
+  margin-top:12px;
+}
+
+.section-heading p {
+  color:var(--gray);
+  font-size:13px;
+}
+
+.category {
+  display:block;
+  position:relative;
+  height:390px;
+  overflow:hidden;
+  background:var(--cream);
+}
+
+.category img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s;
+}
+
+.category:hover img { transform:scale(1.05); }
+
+.category:after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent 35%,rgba(35,25,20,.65));
+}
+
+.category-name {
+  position:absolute;
+  bottom:26px;
+  left:26px;
+  z-index:1;
+  color:white;
+  font-family:'Playfair Display',serif;
+  font-size:30px;
+}
+
+.product {
+  text-align:center;
+  height:100%;
+}
+
+.product-photo {
+  position:relative;
+  background:var(--cream);
+  overflow:hidden;
+}
+
+.product-photo img {
+  width:100%;
+  height:310px;
+  object-fit:cover;
+  transition:.4s;
+}
+
+.product:hover img { transform:scale(1.04); }
+
+.tag {
+  position:absolute;
+  top:14px;
+  left:14px;
+  background:white;
+  padding:8px 12px;
+  font-size:10px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.product h3 {
+  font-size:14px;
+  font-weight:600;
+  margin:18px 0 8px;
+}
+
+.product p {
+  font-size:12px;
+  color:var(--gray);
+}
+
+.editorial {
+  background:var(--cream);
+}
+
+.editorial img {
+  width:100%;
+  height:530px;
+  object-fit:cover;
+}
+
+.editorial-content { padding:60px 9%; }
+
+.editorial h2 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(38px,5vw,60px);
+  color:var(--brown);
+  margin:20px 0;
+}
+
+.editorial p {
+  color:#6d6158;
+  line-height:2;
+  font-size:14px;
+}
+
+.feature {
+  text-align:center;
+  padding:25px;
+}
+
+.feature i {
+  font-size:35px;
+  color:#b99a88;
+}
+
+.feature h3 {
+  font-family:'Playfair Display',serif;
+  font-size:23px;
+  margin:20px 0 10px;
+}
+
+.feature p {
+  font-size:12px;
+  color:var(--gray);
+  line-height:1.8;
+}
+
+.institutional { background:#f7f2ec; }
+
+.institutional p {
+  font-size:14px;
+  color:#6b6057;
+  line-height:2;
+}
+
+.info-card {
+  background:white;
+  border-top:3px solid #b99a88;
+  padding:30px;
+  height:100%;
+}
+
+.info-card h3 {
+  font-family:'Playfair Display',serif;
+  font-size:24px;
+  color:var(--brown);
+  margin-bottom:20px;
+}
+
+.footer {
+  background:#342a25;
+  color:white;
+  padding:70px 0 25px;
+}
+
+.footer h4 {
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  margin-bottom:20px;
+}
+
+.footer p,
+.footer li,
+.footer a {
+  color:#d8cec6;
+  font-size:12px;
+  line-height:2;
+}
+
+.footer ul {
+  list-style:none;
+  padding:0;
+}
+
+.footer a:hover { color:white; }
+
+.social a {
+  font-size:23px;
+  margin-right:17px;
+}
+
+.footer-bottom {
+  border-top:1px solid #66584f;
+  margin-top:45px;
+  padding-top:25px;
+  font-size:11px;
+  color:#c2b4aa;
+}
+
+@media(max-width:768px) {
+  .hero { min-height:480px; }
+  .section { padding:55px 0; }
+  .category { height:270px; }
+  .product-photo img { height:220px; }
+  .editorial img { height:320px; }
+  .editorial-content { padding:45px 25px; }
+  .brand { font-size:28px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="notice">
+  Vitrine demonstrativa independente. Não é o site oficial da Paola da Vinci.
+</div>
+
+<div class="topbar">
+  MODA INFANTIL • ENXOVAL • MOMENTOS ESPECIAIS
+</div>
+
+<!-- CABEÇALHO -->
+<header class="header">
+  <div class="container">
+    <div class="row align-items-center py-4 g-3">
+
+      <div class="col-7 col-md-3">
+        <a class="brand" href="#inicio">
+          Petit Maison
+          <small>Moda & Enxoval</small>
+        </a>
+      </div>
+
+      <div class="col-md-6 d-none d-md-block">
+        <form id="searchForm">
+          <input
+            class="search"
+            id="searchInput"
+            type="search"
+            placeholder="Buscar categorias..."
+            aria-label="Buscar categorias">
+        </form>
+      </div>
+
+      <div class="col-5 col-md-3 text-end header-icons">
+        <a href="#sobre" aria-label="Informações">
+          <i class="bi bi-person"></i>
+        </a>
+        <a href="#categorias" aria-label="Categorias">
+          <i class="bi bi-heart"></i>
+        </a>
+        <a href="https://www.paoladavinci.com.br/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Site oficial">
+          <i class="bi bi-bag"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <button class="navbar-toggler mx-auto"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#menu"
+              aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="menu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categorias">Categorias</a></li>
+          <li class="nav-item"><a class="nav-link" href="#destaques">Destaques</a></li>
+          <li class="nav-item"><a class="nav-link" href="#colecao">Coleção</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">Institucional</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- BANNER -->
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-content">
+
+      <span class="eyebrow">Inspirações para a infância</span>
+
+      <h1>
+        Delicadeza em<br>
+        cada momento.
+      </h1>
+
+      <p>
+        Um universo de moda infantil, roupas para bebês,
+        enxoval e inspirações para acompanhar
+        os momentos mais especiais da infância.
+      </p>
+
+      <a href="#categorias" class="btn-shop mt-4">
+        Explorar categorias
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIAS -->
+<section class="section" id="categorias">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="eyebrow">Descubra</span>
+      <h2>Nosso universo</h2>
+      <p>Uma seleção de categorias para inspirar.</p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <a href="#destaques" class="category">
+          <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=900&q=85"
+               alt="Bebês">
+          <span class="category-name">Bebês</span>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="#destaques" class="category">
+          <img src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=900&q=85"
+               alt="Moda infantil">
+          <span class="category-name">Moda infantil</span>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="#destaques" class="category">
+          <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=900&q=85"
+               alt="Casa e enxoval">
+          <span class="category-name">Casa & Enxoval</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VITRINE -->
+<section class="section pt-0" id="destaques">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="eyebrow">Seleção editorial</span>
+      <h2>Inspirações especiais</h2>
+      <p>
+        Categorias ilustrativas, sem catálogo comercial
+        ou preços neste modelo.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-6 col-lg-3">
+        <article class="product">
+          <div class="product-photo">
+            <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=700&q=85"
+                 alt="Primeiros momentos">
+            <span class="tag">Inspiração</span>
+          </div>
+          <h3>Primeiros momentos</h3>
+          <p>Carinho e delicadeza</p>
+        </article>
+      </div>
+
+      <div class="col-6 col-lg-3">
+        <article class="product">
+          <div class="product-photo">
+            <img src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=700&q=85"
+                 alt="Moda infantil">
+            <span class="tag">Inspiração</span>
+          </div>
+          <h3>Moda infantil</h3>
+          <p>Estilo e conforto</p>
+        </article>
+      </div>
+
+      <div class="col-6 col-lg-3">
+        <article class="product">
+          <div class="product-photo">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=700&q=85"
+                 alt="Enxoval">
+            <span class="tag">Inspiração</span>
+          </div>
+          <h3>Enxoval</h3>
+          <p>Aconchego para o lar</p>
+        </article>
+      </div>
+
+      <div class="col-6 col-lg-3">
+        <article class="product">
+          <div class="product-photo">
+            <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=700&q=85"
+                 alt="Momentos especiais">
+            <span class="tag">Inspiração</span>
+          </div>
+          <h3>Momentos especiais</h3>
+          <p>Memórias da infância</p>
+        </article>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="https://www.paoladavinci.com.br/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn-shop">
+        Visitar loja oficial de referência
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDITORIAL -->
+<section class="editorial" id="colecao">
+  <div class="container-fluid p-0">
+    <div class="row g-0 align-items-center">
+
+      <div class="col-lg-6">
+        <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1200&q=85"
+             alt="Universo infantil">
+      </div>
+
+      <div class="col-lg-6">
+        <div class="editorial-content">
+          <span class="eyebrow">Um mundo de carinho</span>
+
+          <h2>
+            Pequenos detalhes,<br>
+            grandes memórias.
+          </h2>
+
+          <p>
+            A infância é feita de descobertas,
+            carinho e momentos inesquecíveis.
+          </p>
+
+          <p>
+            A moda infantil e o enxoval fazem parte
+            dessas histórias, reunindo conforto,
+            delicadeza e beleza.
+          </p>
+
+          <a href="#sobre" class="btn-shop mt-3">
+            Saiba mais
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS EDITORIAIS -->
+<section class="section">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="feature">
+          <i class="bi bi-heart"></i>
+          <h3>Carinho</h3>
+          <p>Detalhes especiais para os primeiros momentos.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature">
+          <i class="bi bi-stars"></i>
+          <h3>Delicadeza</h3>
+          <p>Uma estética suave e atemporal.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature">
+          <i class="bi bi-house-heart"></i>
+          <h3>Aconchego</h3>
+          <p>Inspirações para casa e enxoval.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INSTITUCIONAL -->
+<section class="section institutional" id="sobre">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="eyebrow">Marca de referência</span>
+      <h2>Paola da Vinci</h2>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+
+        <p>
+          A <strong>Paola da Vinci</strong> é uma marca
+          brasileira relacionada à moda infantil,
+          enxoval e artigos para casa.
+        </p>
+
+        <p>
+          Os dados empresariais fornecidos para
+          a marca identificam a empresa
+          <strong>CF8 CONFECÇÕES LTDA</strong>,
+          inscrita no CNPJ
+          <strong>19.836.211/0001-97</strong>,
+          com endereço na
+          <strong>Rua José Paulino, 908,
+          São Paulo/SP, CEP 01120-000</strong>.
+        </p>
+
+        <p>
+          Esta é uma vitrine demonstrativa independente.
+          Para atendimento, compras e informações oficiais,
+          utilize os canais da marca de referência.
+        </p>
+
+      </div>
+    </div>
+
+    <div class="row g-4 mt-4">
+
+      <div class="col-md-6">
+        <div class="info-card">
+          <h3>Dados empresariais informados</h3>
+
+          <p>
+            <strong>Razão social:</strong><br>
+            CF8 CONFECÇÕES LTDA
+          </p>
+
+          <p>
+            <strong>CNPJ/MF:</strong><br>
+            19.836.211/0001-97
+          </p>
+
+          <p>
+            <strong>Endereço:</strong><br>
+            Rua José Paulino, 908<br>
+            São Paulo — SP<br>
+            CEP: 01120-000
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="info-card">
+          <h3>Atendimento oficial informado</h3>
+
+          <p>
+            <strong>Segunda a quinta-feira:</strong><br>
+            7h30 às 17h30
+          </p>
+
+          <p>
+            <strong>Sexta-feira:</strong><br>
+            7h30 às 16h30 — exceto feriados
+          </p>
+
+          <p>
+            <strong>WhatsApp:</strong><br>
+            <a href="https://wa.me/5511991799951">
+              (11) 99179-9951
+            </a>
+          </p>
+
+          <p>
+            <strong>E-mail:</strong><br>
+            <a href="mailto:sac@paoladavinci.com.br">
+              sac@paoladavinci.com.br
+            </a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- RODAPÉ -->
 <footer class="footer" id="contato">
   <div class="container">
 
@@ -7,16 +773,16 @@
 
       <!-- ATENDIMENTO -->
       <div class="col-lg-3 col-md-6">
-        <h4>Atendimento</h4>
+        <h4>Atendimento oficial</h4>
 
         <p>
-          <strong>Segunda à quinta-feira</strong><br>
-          7h30 às 17h30
+          Segunda a quinta-feira<br>
+          <strong>7h30 às 17h30</strong>
         </p>
 
         <p>
-          <strong>Sexta-feira</strong><br>
-          7h30 às 16h30<br>
+          Sexta-feira<br>
+          <strong>7h30 às 16h30</strong><br>
           Exceto feriados
         </p>
 
@@ -37,19 +803,12 @@
         </p>
 
         <p>
-          <strong>Faça parte do nosso time!</strong><br>
+          <strong>Faça parte do time!</strong><br>
           <a href="https://www.paoladavinci.com.br/"
              target="_blank"
              rel="noopener noreferrer">
-            Envie seu currículo para nós
+            Acessar site oficial
           </a>
-        </p>
-
-        <p>
-          <small>
-            Contatos da marca de referência.
-            O atendimento é realizado pelos canais oficiais.
-          </small>
         </p>
       </div>
 
@@ -115,13 +874,13 @@
 
           <li>
             <a href="https://www.paoladavinci.com.br/institucional/politica-de-privacidade">
-              Política de privacidade
+              Privacidade
             </a>
           </li>
 
           <li>
             <a href="https://www.paoladavinci.com.br/institucional/politica-de-pagamento">
-              Formas de pagamento
+              Pagamentos
             </a>
           </li>
 
@@ -138,9 +897,9 @@
           </li>
         </ul>
 
-        <h4 class="mt-4">Redes sociais</h4>
+        <h4 class="mt-4">Siga a marca</h4>
 
-        <div class="d-flex gap-4 fs-4">
+        <div class="social">
           <a href="https://www.instagram.com/paoladavinci/?hl=pt-br"
              target="_blank"
              rel="noopener noreferrer"
@@ -164,17 +923,13 @@
         </div>
       </div>
 
-      <!-- DADOS DA EMPRESA -->
+      <!-- DADOS LEGAIS -->
       <div class="col-lg-3 col-md-6">
         <h4>Dados da marca de referência</h4>
 
         <p>
-          <strong>CF8 CONFECÇÕES LTDA</strong>
-        </p>
-
-        <p>
-          <strong>CNPJ/MF:</strong><br>
-          19.836.211/0001-97
+          <strong>CF8 CONFECÇÕES LTDA</strong><br>
+          CNPJ/MF: 19.836.211/0001-97
         </p>
 
         <p>
@@ -203,62 +958,105 @@
 
     </div>
 
-    <!-- PAGAMENTOS E SELOS -->
-    <div class="row g-4 mt-4">
-
+    <!-- INFORMAÇÕES DE PAGAMENTO -->
+    <div class="row mt-5 g-4">
       <div class="col-md-6">
-        <h4>Informações de pagamento</h4>
-
+        <h4>Formas de pagamento</h4>
         <p>
-          Consulte as condições e os meios
-          de pagamento diretamente no
+          Para consultar bandeiras, formas de pagamento
+          e condições comerciais, acesse a
           <a href="https://www.paoladavinci.com.br/institucional/politica-de-pagamento"
              target="_blank"
              rel="noopener noreferrer">
-            site oficial da Paola da Vinci
+            política de pagamento oficial
           </a>.
         </p>
       </div>
 
       <div class="col-md-6">
-        <h4>Segurança e certificações</h4>
-
+        <h4>Segurança</h4>
         <p>
-          Selos e certificações da loja oficial
-          devem ser consultados diretamente
-          no respectivo site.
+          Informações sobre selos, certificações
+          e segurança da loja devem ser consultadas
+          diretamente no site oficial.
         </p>
       </div>
-
     </div>
 
     <!-- DIREITOS -->
-    <div class="copyright">
+    <div class="footer-bottom">
 
       <p>
-        Dados legais informados para a marca de referência:
+        Dados empresariais fornecidos:
         CF8 CONFECÇÕES LTDA —
         CNPJ/MF nº 19.836.211/0001-97.
       </p>
 
       <p>
-        Endereço: Rua José Paulino, 908 —
+        Rua José Paulino, 908 —
         São Paulo/SP — CEP 01120-000.
       </p>
 
       <p>
         © 2026 Petit Maison —
-        Modelo demonstrativo independente.
+        Vitrine demonstrativa independente.
       </p>
 
       <p class="mb-0">
         Este modelo não é o site oficial da Paola da Vinci
-        e não possui afiliação comercial declarada.
-        Os links de atendimento, políticas e redes sociais
-        levam aos canais da marca de referência.
+        e não declara vínculo comercial com a marca.
+        Os canais e políticas indicados pertencem
+        ao site oficial de referência.
       </p>
 
     </div>
 
   </div>
 </footer>
+
+<!-- JAVASCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.getElementById("searchForm")
+  .addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const termo = document.getElementById("searchInput")
+      .value.trim().toLowerCase();
+
+    if (!termo) return;
+
+    const categorias = [
+      "bebe",
+      "bebê",
+      "infantil",
+      "moda",
+      "enxoval",
+      "casa",
+      "roupas",
+      "vestido",
+      "maternidade",
+      "acessorios",
+      "acessórios"
+    ];
+
+    const encontrou = categorias.some(
+      palavra => palavra.includes(termo) ||
+                 termo.includes(palavra)
+    );
+
+    if (encontrou) {
+      document.getElementById("categorias")
+        .scrollIntoView({ behavior: "smooth" });
+    } else {
+      alert(
+        "Esta é uma vitrine demonstrativa. " +
+        "Para consultar produtos reais, visite a loja oficial."
+      );
+    }
+  });
+</script>
+
+</body>
+</html>
