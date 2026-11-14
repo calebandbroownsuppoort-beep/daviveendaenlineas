@@ -1,962 +1,264 @@
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Petit Maison | Moda Infantil e Enxoval</title>
-
-<meta name="description" content="Vitrine demonstrativa de moda infantil, roupas para bebês, enxoval e artigos para casa.">
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --cream: #f9f6f1;
-  --sand: #e9dfd1;
-  --taupe: #aa9380;
-  --brown: #59483d;
-  --dark: #302a26;
-  --muted: #7b726b;
-}
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  font-family: 'DM Sans', sans-serif;
-  color: var(--dark);
-  background: white;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:hover { color: var(--brown); }
-
-img { max-width: 100%; }
-
-.demo-notice {
-  background: #eee9e3;
-  padding: 9px 15px;
-  text-align: center;
-  font-size: 11px;
-  color: #655b54;
-}
-
-.topbar {
-  background: var(--brown);
-  color: white;
-  padding: 10px;
-  text-align: center;
-  font-size: 11px;
-  letter-spacing: 1.2px;
-}
-
-.header {
-  background: white;
-  border-bottom: 1px solid #eee8e2;
-}
-
-.logo {
-  display: inline-block;
-  font-family: 'Playfair Display', serif;
-  font-size: 35px;
-  color: var(--brown);
-  font-weight: 600;
-  line-height: 1;
-}
-
-.logo small {
-  display: block;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-align: center;
-  margin-top: 10px;
-  color: var(--muted);
-}
-
-.search {
-  width: 100%;
-  border: 1px solid #e8e2db;
-  background: #faf8f5;
-  padding: 13px 18px;
-  font-size: 12px;
-  outline: none;
-}
-
-.search:focus {
-  border-color: var(--taupe);
-}
-
-.header-icons a {
-  font-size: 21px;
-  margin-left: 18px;
-}
-
-.navbar {
-  border-top: 1px solid #f1ede8;
-}
-
-.nav-link {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 600;
-  margin: 0 12px;
-}
-
-.hero {
-  min-height: 630px;
-  display: flex;
-  align-items: center;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(249,246,241,.97),
-      rgba(249,246,241,.82),
-      rgba(249,246,241,.05)
-    ),
-    url('https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1900&q=85')
-    center / cover;
-}
-
-.hero-content {
-  max-width: 620px;
-}
-
-.hero small {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 11px;
-  color: var(--taupe);
-  font-weight: 700;
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(48px, 6vw, 80px);
-  line-height: 1.15;
-  font-weight: 500;
-  color: var(--brown);
-  margin: 20px 0;
-}
-
-.hero p {
-  max-width: 500px;
-  color: #655a51;
-  line-height: 1.9;
-  font-size: 14px;
-}
-
-.btn-custom {
-  display: inline-block;
-  padding: 15px 30px;
-  background: var(--brown);
-  color: white;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.3px;
-  transition: .3s;
-}
-
-.btn-custom:hover {
-  background: var(--taupe);
-  color: white;
-}
-
-.section {
-  padding: 85px 0;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 45px;
-}
-
-.section-title small {
-  color: var(--taupe);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.section-title h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(34px, 5vw, 48px);
-  font-weight: 500;
-  color: var(--brown);
-  margin-top: 12px;
-}
-
-.section-title p {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.category {
-  position: relative;
-  display: block;
-  height: 400px;
-  overflow: hidden;
-  background: var(--cream);
-}
-
-.category img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: .5s;
-}
-
-.category:hover img {
-  transform: scale(1.05);
-}
-
-.category::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    transparent 40%,
-    rgba(43,33,26,.6)
-  );
-}
-
-.category-label {
-  position: absolute;
-  bottom: 25px;
-  left: 25px;
-  z-index: 1;
-  color: white;
-  font-family: 'Playfair Display', serif;
-  font-size: 30px;
-}
-
-.product {
-  text-align: center;
-  height: 100%;
-}
-
-.product-image {
-  position: relative;
-  background: var(--cream);
-  overflow: hidden;
-}
-
-.product-image img {
-  width: 100%;
-  height: 330px;
-  object-fit: cover;
-  transition: .4s;
-}
-
-.product:hover img {
-  transform: scale(1.04);
-}
-
-.product-tag {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  background: white;
-  color: var(--brown);
-  padding: 8px 12px;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.product h3 {
-  font-size: 14px;
-  font-weight: 600;
-  margin: 18px 0 8px;
-}
-
-.product p {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.editorial {
-  background: var(--cream);
-}
-
-.editorial img {
-  width: 100%;
-  height: 560px;
-  object-fit: cover;
-}
-
-.editorial-text {
-  padding: 65px 10%;
-}
-
-.editorial-text small {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--taupe);
-  font-size: 11px;
-}
-
-.editorial-text h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(42px, 5vw, 65px);
-  color: var(--brown);
-  line-height: 1.2;
-  margin: 20px 0;
-}
-
-.editorial-text p {
-  color: #6e6258;
-  font-size: 14px;
-  line-height: 2;
-}
-
-.benefit {
-  text-align: center;
-  padding: 25px;
-}
-
-.benefit i {
-  font-size: 34px;
-  color: var(--taupe);
-}
-
-.benefit h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  color: var(--brown);
-  margin: 20px 0 10px;
-}
-
-.benefit p {
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.9;
-}
-
-.about {
-  background: #f7f2ec;
-}
-
-.about p {
-  font-size: 14px;
-  color: #6b6057;
-  line-height: 2;
-}
-
-.info-box {
-  background: white;
-  padding: 32px;
-  height: 100%;
-  border-top: 3px solid var(--taupe);
-}
-
-.info-box h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  color: var(--brown);
-  margin-bottom: 20px;
-}
-
-.info-box p {
-  margin-bottom: 12px;
-}
-
-.footer {
-  background: #332a25;
-  color: white;
-  padding: 75px 0 25px;
-}
-
-.footer h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 23px;
-  margin-bottom: 20px;
-}
-
-.footer p,
-.footer a,
-.footer li {
-  color: #d8cec6;
-  font-size: 12px;
-  line-height: 2;
-}
-
-.footer ul {
-  padding: 0;
-  list-style: none;
-}
-
-.footer a:hover {
-  color: white;
-}
-
-.copyright {
-  border-top: 1px solid #62544c;
-  margin-top: 45px;
-  padding-top: 25px;
-  color: #b9aaa0;
-  font-size: 11px;
-}
-
-@media(max-width:768px) {
-  .hero { min-height: 500px; }
-  .section { padding: 55px 0; }
-  .category { height: 280px; }
-  .product-image img { height: 230px; }
-  .editorial img { height: 350px; }
-  .editorial-text { padding: 45px 25px; }
-  .logo { font-size: 29px; }
-}
-</style>
-</head>
-
-<body>
-
-<div class="demo-notice">
-  Vitrine demonstrativa independente, inspirada no universo
-  da moda infantil e enxoval. Não é o site oficial Paola da Vinci.
-</div>
-
-<div class="topbar">
-  MODA INFANTIL • ENXOVAL • DELICADEZA EM CADA DETALHE
-</div>
-
-<!-- CABEÇALHO -->
-<header class="header sticky-top">
-  <div class="container">
-    <div class="row align-items-center py-3 g-3">
-
-      <div class="col-7 col-md-3">
-        <a href="#inicio" class="logo">
-          Petit Maison
-          <small>Moda & Enxoval</small>
-        </a>
-      </div>
-
-      <div class="col-md-6 d-none d-md-block">
-        <form id="searchForm">
-          <input
-            id="searchInput"
-            type="search"
-            class="search"
-            placeholder="Busque moda infantil, enxoval e acessórios..."
-            aria-label="Buscar categorias">
-        </form>
-      </div>
-
-      <div class="col-5 col-md-3 text-end header-icons">
-        <a href="#sobre" aria-label="Institucional">
-          <i class="bi bi-person"></i>
-        </a>
-
-        <a href="#categorias" aria-label="Categorias">
-          <i class="bi bi-heart"></i>
-        </a>
-
-        <a href="https://www.paoladavinci.com.br/"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Visitar loja oficial">
-          <i class="bi bi-bag"></i>
-        </a>
-      </div>
-
-    </div>
-  </div>
-
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-
-      <button
-        class="navbar-toggler mx-auto"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#menu"
-        aria-label="Abrir menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-center" id="menu">
-        <ul class="navbar-nav">
-
-          <li class="nav-item">
-            <a class="nav-link" href="#inicio">Início</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#categorias">Categorias</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#destaques">Destaques</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#editorial">Coleção</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#sobre">Institucional</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#contato">Contato</a>
-          </li>
-
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-
-<main>
-
-<!-- BANNER -->
-<section class="hero" id="inicio">
-  <div class="container">
-    <div class="hero-content">
-
-      <small>Um universo de carinho</small>
-
-      <h1>
-        Delicadeza em<br>
-        cada momento.
-      </h1>
-
-      <p>
-        Inspire-se em coleções de moda infantil,
-        roupas para bebês, enxoval e peças
-        pensadas para os momentos especiais
-        da infância.
-      </p>
-
-      <a href="#categorias" class="btn-custom mt-4">
-        Explorar categorias
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- CATEGORIAS -->
-<section class="section" id="categorias">
-  <div class="container">
-
-    <div class="section-title">
-      <small>Descubra nosso universo</small>
-      <h2>Escolha sua categoria</h2>
-    </div>
-
-    <div class="row g-4">
-
-      <div class="col-md-4">
-        <a href="#destaques" class="category">
-          <img
-            src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=900&q=85"
-            alt="Bebê e enxoval">
-          <span class="category-label">Bebês</span>
-        </a>
-      </div>
-
-      <div class="col-md-4">
-        <a href="#destaques" class="category">
-          <img
-            src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=900&q=85"
-            alt="Moda infantil">
-          <span class="category-label">Moda infantil</span>
-        </a>
-      </div>
-
-      <div class="col-md-4">
-        <a href="#destaques" class="category">
-          <img
-            src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=900&q=85"
-            alt="Quarto e enxoval">
-          <span class="category-label">Casa & Enxoval</span>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- VITRINE -->
-<section class="section pt-0" id="destaques">
-  <div class="container">
-
-    <div class="section-title">
-      <small>Seleção editorial</small>
-      <h2>Inspirações especiais</h2>
-
-      <p>
-        Imagens ilustrativas. Para produtos reais,
-        preços e disponibilidade, consulte a loja oficial.
-      </p>
-    </div>
-
-    <div class="row g-4">
-
-      <div class="col-6 col-lg-3">
-        <article class="product">
-          <div class="product-image">
-            <img
-              src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=700&q=85"
-              alt="Universo do bebê">
-            <span class="product-tag">Inspiração</span>
-          </div>
-          <h3>Primeiros momentos</h3>
-          <p>Delicadeza para os pequenos</p>
-        </article>
-      </div>
-
-      <div class="col-6 col-lg-3">
-        <article class="product">
-          <div class="product-image">
-            <img
-              src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=700&q=85"
-              alt="Moda para crianças">
-            <span class="product-tag">Inspiração</span>
-          </div>
-          <h3>Moda infantil</h3>
-          <p>Estilo para a infância</p>
-        </article>
-      </div>
-
-      <div class="col-6 col-lg-3">
-        <article class="product">
-          <div class="product-image">
-            <img
-              src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=700&q=85"
-              alt="Enxoval e decoração">
-            <span class="product-tag">Inspiração</span>
-          </div>
-          <h3>Enxoval delicado</h3>
-          <p>Conforto e aconchego</p>
-        </article>
-      </div>
-
-      <div class="col-6 col-lg-3">
-        <article class="product">
-          <div class="product-image">
-            <img
-              src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=700&q=85"
-              alt="Momentos da infância">
-            <span class="product-tag">Inspiração</span>
-          </div>
-          <h3>Momentos especiais</h3>
-          <p>Carinho em cada detalhe</p>
-        </article>
-      </div>
-
-    </div>
-
-    <div class="text-center mt-5">
-      <a href="https://www.paoladavinci.com.br/"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="btn-custom">
-        Visitar loja oficial
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- EDITORIAL -->
-<section class="editorial" id="editorial">
-  <div class="container-fluid p-0">
-    <div class="row g-0 align-items-center">
-
-      <div class="col-lg-6">
-        <img
-          src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1200&q=85"
-          alt="Bebê em ambiente acolhedor">
-      </div>
-
-      <div class="col-lg-6">
-        <div class="editorial-text">
-
-          <small>Infância e afeto</small>
-
-          <h2>
-            Pequenos detalhes,<br>
-            grandes memórias.
-          </h2>
-
-          <p>
-            A infância é marcada por descobertas,
-            aconchego e momentos que ficam
-            guardados para sempre.
-          </p>
-
-          <p>
-            A moda infantil e o enxoval acompanham
-            essas experiências com delicadeza,
-            conforto e beleza.
-          </p>
-
-          <a href="#sobre" class="btn-custom mt-3">
-            Conhecer a inspiração
-          </a>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BENEFÍCIOS EDITORIAIS -->
-<section class="section">
-  <div class="container">
-
-    <div class="row g-4">
-
-      <div class="col-md-4">
-        <div class="benefit">
-          <i class="bi bi-heart"></i>
-          <h3>Carinho em cada detalhe</h3>
-          <p>Inspirações para os momentos mais especiais da infância.</p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="benefit">
-          <i class="bi bi-stars"></i>
-          <h3>Estilo delicado</h3>
-          <p>Uma estética suave e atemporal para moda infantil.</p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="benefit">
-          <i class="bi bi-house-heart"></i>
-          <h3>Casa & aconchego</h3>
-          <p>Referências de enxoval e ambientes acolhedores.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- INSTITUCIONAL -->
-<section class="section about" id="sobre">
-  <div class="container">
-
-    <div class="section-title">
-      <small>Marca de referência</small>
-      <h2>Paola da Vinci</h2>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-lg-10 text-center">
-
-        <p>
-          A <strong>Paola da Vinci</strong> é uma marca
-          brasileira associada ao universo da moda infantil,
-          enxoval e artigos para casa, com uma proposta
-          voltada à delicadeza e ao cuidado com os detalhes.
-        </p>
-
-        <p>
-          Segundo sua apresentação institucional,
-          a marca possui uma trajetória iniciada em
-          <strong>1978</strong>.
-        </p>
-
-        <p>
-          Esta página utiliza o segmento da marca
-          apenas como referência criativa.
-          Não possui vínculo comercial declarado
-          com a Paola da Vinci e não realiza vendas.
-        </p>
-
-        <a href="https://www.paoladavinci.com.br/"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="btn-custom mt-3">
-          Acessar site oficial
-        </a>
-
-      </div>
-    </div>
-
-    <div class="row g-4 mt-4">
-
-      <div class="col-md-6">
-        <div class="info-box">
-          <h3>Universo da marca</h3>
-          <p><strong>Marca de referência:</strong> Paola da Vinci</p>
-          <p><strong>Segmento:</strong> Moda infantil e enxoval</p>
-          <p><strong>Outras categorias:</strong> Artigos para casa</p>
-          <p><strong>Trajetória informada:</strong> Desde 1978</p>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="info-box">
-          <h3>Informações do modelo</h3>
-          <p><strong>Nome da vitrine:</strong> Petit Maison</p>
-          <p><strong>Finalidade:</strong> Demonstração de layout</p>
-          <p><strong>Vendas:</strong> Não disponíveis</p>
-          <p><strong>Pagamentos:</strong> Não disponíveis</p>
-          <p><strong>Site oficial de referência:</strong>
-            <a href="https://www.paoladavinci.com.br/"
-               target="_blank"
-               rel="noopener noreferrer">
-              paoladavinci.com.br
-            </a>
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-</main>
-
-<!-- RODAPÉ -->
+<!-- RODAPÉ INSTITUCIONAL -->
 <footer class="footer" id="contato">
   <div class="container">
 
     <div class="row g-4">
 
-      <div class="col-lg-4 col-md-6">
-        <h4>Petit Maison</h4>
+      <!-- ATENDIMENTO -->
+      <div class="col-lg-3 col-md-6">
+        <h4>Atendimento</h4>
 
         <p>
-          Vitrine demonstrativa independente
-          dedicada ao universo da moda infantil,
-          enxoval e artigos para casa.
+          <strong>Segunda à quinta-feira</strong><br>
+          7h30 às 17h30
         </p>
 
         <p>
-          Este modelo não representa uma loja oficial,
-          canal de atendimento ou operação comercial
-          da Paola da Vinci.
+          <strong>Sexta-feira</strong><br>
+          7h30 às 16h30<br>
+          Exceto feriados
+        </p>
+
+        <p>
+          <i class="bi bi-whatsapp"></i>
+          <a href="https://wa.me/5511991799951"
+             target="_blank"
+             rel="noopener noreferrer">
+            (11) 99179-9951
+          </a>
+        </p>
+
+        <p>
+          <i class="bi bi-envelope"></i>
+          <a href="mailto:sac@paoladavinci.com.br">
+            sac@paoladavinci.com.br
+          </a>
+        </p>
+
+        <p>
+          <strong>Faça parte do nosso time!</strong><br>
+          <a href="https://www.paoladavinci.com.br/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Envie seu currículo para nós
+          </a>
+        </p>
+
+        <p>
+          <small>
+            Contatos da marca de referência.
+            O atendimento é realizado pelos canais oficiais.
+          </small>
         </p>
       </div>
 
-      <div class="col-lg-4 col-md-6">
-        <h4>Navegação</h4>
+      <!-- INSTITUCIONAL -->
+      <div class="col-lg-3 col-md-6">
+        <h4>Institucional</h4>
 
         <ul>
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#categorias">Categorias</a></li>
-          <li><a href="#destaques">Inspirações</a></li>
-          <li><a href="#editorial">Coleção editorial</a></li>
-          <li><a href="#sobre">Institucional</a></li>
           <li>
-            <a href="https://www.paoladavinci.com.br/"
-               target="_blank"
-               rel="noopener noreferrer">
-              Loja oficial de referência
+            <a href="https://www.paoladavinci.com.br/institucional/quem-somos">
+              Quem Somos
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.paoladavinci.com.br/institucional/nossas-lojas">
+              Nossas lojas
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.paoladavinci.com.br/institucional/faq">
+              Perguntas Frequentes
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.paoladavinci.com.br/institucional/vendas-corporativas">
+              Vendas corporativas
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.paoladavinci.com.br/institucional/multimarcas">
+              Multimarcas
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.paoladavinci.com.br/">
+              Blog
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.paoladavinci.com.br/faq">
+              FAQ
             </a>
           </li>
         </ul>
       </div>
 
-      <div class="col-lg-4 col-md-6">
-        <h4>Referência institucional</h4>
+      <!-- POLÍTICAS -->
+      <div class="col-lg-3 col-md-6">
+        <h4>Informações úteis</h4>
+
+        <ul>
+          <li>
+            <a href="https://www.paoladavinci.com.br/institucional/termos-e-condicoes">
+              Termos de uso
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.paoladavinci.com.br/institucional/politica-de-privacidade">
+              Política de privacidade
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.paoladavinci.com.br/institucional/politica-de-pagamento">
+              Formas de pagamento
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.paoladavinci.com.br/institucional/politica-de-troca">
+              Trocas e devoluções
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.paoladavinci.com.br/">
+              Entregas e fretes
+            </a>
+          </li>
+        </ul>
+
+        <h4 class="mt-4">Redes sociais</h4>
+
+        <div class="d-flex gap-4 fs-4">
+          <a href="https://www.instagram.com/paoladavinci/?hl=pt-br"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Instagram oficial">
+            <i class="bi bi-instagram"></i>
+          </a>
+
+          <a href="https://www.facebook.com/paoladavinci"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Facebook oficial">
+            <i class="bi bi-facebook"></i>
+          </a>
+
+          <a href="https://www.paoladavinci.com.br/"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Site oficial">
+            <i class="bi bi-globe"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- DADOS DA EMPRESA -->
+      <div class="col-lg-3 col-md-6">
+        <h4>Dados da marca de referência</h4>
 
         <p>
-          <strong>Paola da Vinci</strong><br>
-          Moda infantil, enxoval e artigos para casa.
+          <strong>CF8 CONFECÇÕES LTDA</strong>
         </p>
 
         <p>
-          Site oficial:<br>
+          <strong>CNPJ/MF:</strong><br>
+          19.836.211/0001-97
+        </p>
+
+        <p>
+          <strong>Endereço:</strong><br>
+          Rua José Paulino, 908<br>
+          São Paulo — SP<br>
+          CEP: 01120-000
+        </p>
+
+        <p>
+          <strong>E-mail:</strong><br>
+          <a href="mailto:sac@paoladavinci.com.br">
+            sac@paoladavinci.com.br
+          </a>
+        </p>
+
+        <p>
+          <strong>Site oficial:</strong><br>
           <a href="https://www.paoladavinci.com.br/"
              target="_blank"
              rel="noopener noreferrer">
             www.paoladavinci.com.br
           </a>
         </p>
+      </div>
+
+    </div>
+
+    <!-- PAGAMENTOS E SELOS -->
+    <div class="row g-4 mt-4">
+
+      <div class="col-md-6">
+        <h4>Informações de pagamento</h4>
 
         <p>
-          Dados jurídicos e informações de atendimento
+          Consulte as condições e os meios
+          de pagamento diretamente no
+          <a href="https://www.paoladavinci.com.br/institucional/politica-de-pagamento"
+             target="_blank"
+             rel="noopener noreferrer">
+            site oficial da Paola da Vinci
+          </a>.
+        </p>
+      </div>
+
+      <div class="col-md-6">
+        <h4>Segurança e certificações</h4>
+
+        <p>
+          Selos e certificações da loja oficial
           devem ser consultados diretamente
-          nos canais oficiais da marca.
+          no respectivo site.
         </p>
       </div>
 
     </div>
 
+    <!-- DIREITOS -->
     <div class="copyright">
+
       <p>
-        © 2026 Petit Maison — Modelo demonstrativo independente.
+        Dados legais informados para a marca de referência:
+        CF8 CONFECÇÕES LTDA —
+        CNPJ/MF nº 19.836.211/0001-97.
+      </p>
+
+      <p>
+        Endereço: Rua José Paulino, 908 —
+        São Paulo/SP — CEP 01120-000.
+      </p>
+
+      <p>
+        © 2026 Petit Maison —
+        Modelo demonstrativo independente.
       </p>
 
       <p class="mb-0">
-        Paola da Vinci é uma marca de seus respectivos titulares.
-        Este projeto não possui afiliação oficial declarada.
-        Imagens utilizadas apenas para fins ilustrativos.
+        Este modelo não é o site oficial da Paola da Vinci
+        e não possui afiliação comercial declarada.
+        Os links de atendimento, políticas e redes sociais
+        levam aos canais da marca de referência.
       </p>
+
     </div>
 
   </div>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-document.getElementById("searchForm")
-  .addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-    const termo = document.getElementById("searchInput")
-      .value.trim().toLowerCase();
-
-    if (!termo) return;
-
-    const palavras = [
-      "bebe",
-      "bebê",
-      "infantil",
-      "moda",
-      "enxoval",
-      "casa",
-      "roupas",
-      "vestido",
-      "maternidade",
-      "acessorios",
-      "acessórios"
-    ];
-
-    const encontrou = palavras.some(
-      palavra => palavra.includes(termo) ||
-                 termo.includes(palavra)
-    );
-
-    if (encontrou) {
-      document.getElementById("categorias")
-        .scrollIntoView({ behavior: "smooth" });
-    } else {
-      alert(
-        "Esta é uma vitrine demonstrativa. " +
-        "Para pesquisar produtos reais, consulte a loja oficial."
-      );
-    }
-
-  });
-</script>
-
-</body>
-</html>
