@@ -5,22 +5,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>47Elétrica S.A. | Materiais Elétricos</title>
+<title>Petit Maison | Moda Infantil e Enxoval</title>
 
-<meta name="description" content="Página demonstrativa sobre a 47Elétrica S.A., comércio varejista de materiais elétricos em Rio do Sul, Santa Catarina.">
+<meta name="description" content="Vitrine demonstrativa de moda infantil, roupas para bebês, enxoval e artigos para casa.">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Barlow+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --blue: #103c78;
-  --blue-dark: #092449;
-  --yellow: #f2b52b;
-  --light: #f4f7fa;
-  --dark: #172334;
-  --gray: #687585;
+  --cream: #f9f6f1;
+  --sand: #e9dfd1;
+  --taupe: #aa9380;
+  --brown: #59483d;
+  --dark: #302a26;
+  --muted: #7b726b;
 }
 
 * { box-sizing: border-box; }
@@ -29,147 +29,155 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   color: var(--dark);
-  background: #fff;
+  background: white;
 }
 
-a { color: inherit; text-decoration: none; }
-a:hover { color: var(--blue); }
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover { color: var(--brown); }
+
 img { max-width: 100%; }
 
 .demo-notice {
+  background: #eee9e3;
   padding: 9px 15px;
-  background: #edf2f7;
-  color: #526273;
   text-align: center;
   font-size: 11px;
+  color: #655b54;
 }
 
 .topbar {
-  background: var(--blue-dark);
-  color: #fff;
+  background: var(--brown);
+  color: white;
+  padding: 10px;
   text-align: center;
-  padding: 11px;
   font-size: 11px;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
 }
 
 .header {
-  background: #fff;
-  border-bottom: 1px solid #e7eaf0;
+  background: white;
+  border-bottom: 1px solid #eee8e2;
 }
 
 .logo {
   display: inline-block;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 38px;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--blue);
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
+  color: var(--brown);
+  font-weight: 600;
   line-height: 1;
 }
 
-.logo span { color: var(--yellow); }
-
 .logo small {
   display: block;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 1.8px;
-  color: var(--gray);
-  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--muted);
 }
 
 .search {
   width: 100%;
-  border: 1px solid #dce3ec;
+  border: 1px solid #e8e2db;
+  background: #faf8f5;
   padding: 13px 18px;
+  font-size: 12px;
   outline: none;
-  border-radius: 4px;
-  font-size: 13px;
 }
 
-.search:focus { border-color: var(--blue); }
+.search:focus {
+  border-color: var(--taupe);
+}
 
 .header-icons a {
-  font-size: 22px;
+  font-size: 21px;
   margin-left: 18px;
-  color: var(--blue);
 }
 
-.navbar { border-top: 1px solid #edf0f4; }
+.navbar {
+  border-top: 1px solid #f1ede8;
+}
 
 .nav-link {
+  font-size: 12px;
   text-transform: uppercase;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: .5px;
+  letter-spacing: 1px;
+  font-weight: 600;
   margin: 0 12px;
 }
 
 .hero {
-  min-height: 610px;
+  min-height: 630px;
   display: flex;
   align-items: center;
-  color: #fff;
   background:
     linear-gradient(
       90deg,
-      rgba(5,26,55,.94),
-      rgba(7,40,78,.68),
-      rgba(7,40,78,.15)
+      rgba(249,246,241,.97),
+      rgba(249,246,241,.82),
+      rgba(249,246,241,.05)
     ),
-    url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1900&q=85')
+    url('https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1900&q=85')
     center / cover;
 }
 
+.hero-content {
+  max-width: 620px;
+}
+
 .hero small {
-  color: var(--yellow);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 2px;
   text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  color: var(--taupe);
+  font-weight: 700;
 }
 
 .hero h1 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(52px, 7vw, 92px);
-  font-weight: 800;
-  line-height: 1;
-  text-transform: uppercase;
-  max-width: 780px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 1.15;
+  font-weight: 500;
+  color: var(--brown);
   margin: 20px 0;
 }
 
 .hero p {
-  max-width: 580px;
-  font-size: 15px;
+  max-width: 500px;
+  color: #655a51;
   line-height: 1.9;
-  color: #e6edf5;
+  font-size: 14px;
 }
 
-.btn-primary-custom {
+.btn-custom {
   display: inline-block;
-  background: var(--yellow);
-  border: 1px solid var(--yellow);
-  color: #15243a;
   padding: 15px 30px;
-  font-size: 12px;
-  font-weight: 800;
+  background: var(--brown);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .7px;
+  letter-spacing: 1.3px;
   transition: .3s;
 }
 
-.btn-primary-custom:hover {
-  background: #fff;
-  color: var(--blue);
+.btn-custom:hover {
+  background: var(--taupe);
+  color: white;
 }
 
-.section { padding: 80px 0; }
+.section {
+  padding: 85px 0;
+}
 
 .section-title {
   text-align: center;
@@ -177,32 +185,32 @@ img { max-width: 100%; }
 }
 
 .section-title small {
-  color: var(--blue);
+  color: var(--taupe);
   text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 700;
   letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 700;
 }
 
 .section-title h2 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(40px, 5vw, 55px);
-  font-weight: 800;
-  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 5vw, 48px);
+  font-weight: 500;
+  color: var(--brown);
   margin-top: 12px;
 }
 
 .section-title p {
-  color: var(--gray);
+  color: var(--muted);
   font-size: 13px;
 }
 
 .category {
-  display: block;
   position: relative;
-  height: 350px;
+  display: block;
+  height: 400px;
   overflow: hidden;
-  background: var(--blue-dark);
+  background: var(--cream);
 }
 
 .category img {
@@ -212,29 +220,28 @@ img { max-width: 100%; }
   transition: .5s;
 }
 
-.category:hover img { transform: scale(1.06); }
+.category:hover img {
+  transform: scale(1.05);
+}
 
 .category::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    transparent 25%,
-    rgba(0,18,43,.85)
+    transparent 40%,
+    rgba(43,33,26,.6)
   );
 }
 
 .category-label {
   position: absolute;
-  bottom: 24px;
+  bottom: 25px;
   left: 25px;
-  right: 20px;
   z-index: 1;
-  color: #fff;
-  font-family: 'Barlow Condensed', sans-serif;
+  color: white;
+  font-family: 'Playfair Display', serif;
   font-size: 30px;
-  font-weight: 800;
-  text-transform: uppercase;
 }
 
 .product {
@@ -244,75 +251,77 @@ img { max-width: 100%; }
 
 .product-image {
   position: relative;
+  background: var(--cream);
   overflow: hidden;
-  background: #eef2f7;
 }
 
 .product-image img {
   width: 100%;
-  height: 300px;
+  height: 330px;
   object-fit: cover;
   transition: .4s;
 }
 
-.product:hover img { transform: scale(1.04); }
+.product:hover img {
+  transform: scale(1.04);
+}
 
 .product-tag {
   position: absolute;
   top: 14px;
   left: 14px;
-  background: var(--blue);
-  color: #fff;
+  background: white;
+  color: var(--brown);
   padding: 8px 12px;
   font-size: 10px;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .product h3 {
-  font-size: 15px;
-  font-weight: 700;
-  margin: 18px 0 9px;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 18px 0 8px;
 }
 
 .product p {
   font-size: 12px;
-  color: var(--gray);
-  line-height: 1.8;
+  color: var(--muted);
 }
 
 .editorial {
-  background: var(--blue-dark);
-  color: #fff;
+  background: var(--cream);
 }
 
 .editorial img {
   width: 100%;
-  height: 540px;
+  height: 560px;
   object-fit: cover;
 }
 
-.editorial-text { padding: 60px 9%; }
+.editorial-text {
+  padding: 65px 10%;
+}
 
 .editorial-text small {
-  color: var(--yellow);
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 12px;
+  color: var(--taupe);
+  font-size: 11px;
 }
 
 .editorial-text h2 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(48px, 6vw, 76px);
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: 1;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 5vw, 65px);
+  color: var(--brown);
+  line-height: 1.2;
   margin: 20px 0;
 }
 
 .editorial-text p {
-  color: #d0dceb;
-  line-height: 2;
+  color: #6e6258;
   font-size: 14px;
+  line-height: 2;
 }
 
 .benefit {
@@ -321,109 +330,109 @@ img { max-width: 100%; }
 }
 
 .benefit i {
-  color: var(--blue);
-  font-size: 36px;
+  font-size: 34px;
+  color: var(--taupe);
 }
 
 .benefit h3 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 23px;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--brown);
   margin: 20px 0 10px;
 }
 
 .benefit p {
-  color: var(--gray);
   font-size: 12px;
+  color: var(--muted);
   line-height: 1.9;
 }
 
-.about { background: var(--light); }
+.about {
+  background: #f7f2ec;
+}
 
 .about p {
-  color: #586574;
   font-size: 14px;
+  color: #6b6057;
   line-height: 2;
 }
 
 .info-box {
-  background: #fff;
-  padding: 30px;
-  border-left: 4px solid var(--yellow);
+  background: white;
+  padding: 32px;
   height: 100%;
-  box-shadow: 0 5px 25px rgba(0,0,0,.04);
+  border-top: 3px solid var(--taupe);
 }
 
 .info-box h3 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 24px;
-  font-weight: 700;
-  color: var(--blue);
-  text-transform: uppercase;
+  color: var(--brown);
+  margin-bottom: 20px;
 }
 
-.info-box p { margin-bottom: 0; }
+.info-box p {
+  margin-bottom: 12px;
+}
 
 .footer {
-  background: #091b34;
-  color: #fff;
-  padding: 70px 0 25px;
+  background: #332a25;
+  color: white;
+  padding: 75px 0 25px;
 }
 
 .footer h4 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 23px;
-  font-weight: 700;
-  text-transform: uppercase;
   margin-bottom: 20px;
 }
 
 .footer p,
 .footer a,
 .footer li {
-  color: #c5cfda;
+  color: #d8cec6;
   font-size: 12px;
   line-height: 2;
 }
 
 .footer ul {
-  list-style: none;
   padding: 0;
+  list-style: none;
 }
 
-.footer a:hover { color: var(--yellow); }
+.footer a:hover {
+  color: white;
+}
 
 .copyright {
-  border-top: 1px solid #34445a;
+  border-top: 1px solid #62544c;
   margin-top: 45px;
   padding-top: 25px;
-  color: #a8b4c2;
+  color: #b9aaa0;
   font-size: 11px;
 }
 
 @media(max-width:768px) {
-  .hero { min-height: 480px; }
+  .hero { min-height: 500px; }
   .section { padding: 55px 0; }
-  .category { height: 260px; }
-  .product-image img { height: 220px; }
+  .category { height: 280px; }
+  .product-image img { height: 230px; }
   .editorial img { height: 350px; }
-  .editorial-text { padding: 40px 25px; }
+  .editorial-text { padding: 45px 25px; }
+  .logo { font-size: 29px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- AVISO -->
 <div class="demo-notice">
-  Modelo institucional demonstrativo independente.
-  Não representa um canal oficial de vendas da 47Elétrica S.A.
+  Vitrine demonstrativa independente, inspirada no universo
+  da moda infantil e enxoval. Não é o site oficial Paola da Vinci.
 </div>
 
-<!-- BARRA SUPERIOR -->
 <div class="topbar">
-  MATERIAIS ELÉTRICOS • INSTALAÇÕES • INFRAESTRUTURA
+  MODA INFANTIL • ENXOVAL • DELICADEZA EM CADA DETALHE
 </div>
 
 <!-- CABEÇALHO -->
@@ -433,33 +442,36 @@ img { max-width: 100%; }
 
       <div class="col-7 col-md-3">
         <a href="#inicio" class="logo">
-          47ELÉTRICA<span>.</span>
-          <small>MODELO INSTITUCIONAL</small>
+          Petit Maison
+          <small>Moda & Enxoval</small>
         </a>
       </div>
 
       <div class="col-md-6 d-none d-md-block">
         <form id="searchForm">
           <input
-            type="search"
             id="searchInput"
+            type="search"
             class="search"
-            placeholder="Busque materiais elétricos..."
+            placeholder="Busque moda infantil, enxoval e acessórios..."
             aria-label="Buscar categorias">
         </form>
       </div>
 
       <div class="col-5 col-md-3 text-end header-icons">
-        <a href="#sobre" aria-label="Sobre a empresa">
-          <i class="bi bi-building"></i>
+        <a href="#sobre" aria-label="Institucional">
+          <i class="bi bi-person"></i>
         </a>
 
         <a href="#categorias" aria-label="Categorias">
-          <i class="bi bi-grid"></i>
+          <i class="bi bi-heart"></i>
         </a>
 
-        <a href="#contato" aria-label="Informações institucionais">
-          <i class="bi bi-geo-alt"></i>
+        <a href="https://www.paoladavinci.com.br/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Visitar loja oficial">
+          <i class="bi bi-bag"></i>
         </a>
       </div>
 
@@ -480,12 +492,31 @@ img { max-width: 100%; }
 
       <div class="collapse navbar-collapse justify-content-center" id="menu">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-          <li class="nav-item"><a class="nav-link" href="#categorias">Categorias</a></li>
-          <li class="nav-item"><a class="nav-link" href="#destaques">Destaques</a></li>
-          <li class="nav-item"><a class="nav-link" href="#editorial">Setor elétrico</a></li>
-          <li class="nav-item"><a class="nav-link" href="#sobre">A empresa</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#inicio">Início</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#categorias">Categorias</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#destaques">Destaques</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#editorial">Coleção</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#sobre">Institucional</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#contato">Contato</a>
+          </li>
+
         </ul>
       </div>
     </div>
@@ -494,28 +525,30 @@ img { max-width: 100%; }
 
 <main>
 
-<!-- BANNER PRINCIPAL -->
+<!-- BANNER -->
 <section class="hero" id="inicio">
   <div class="container">
+    <div class="hero-content">
 
-    <small>Comércio varejista de material elétrico</small>
+      <small>Um universo de carinho</small>
 
-    <h1>
-      Energia para<br>
-      cada projeto.
-    </h1>
+      <h1>
+        Delicadeza em<br>
+        cada momento.
+      </h1>
 
-    <p>
-      Conheça categorias de materiais elétricos,
-      componentes para instalações e soluções
-      utilizadas em projetos residenciais,
-      comerciais e industriais.
-    </p>
+      <p>
+        Inspire-se em coleções de moda infantil,
+        roupas para bebês, enxoval e peças
+        pensadas para os momentos especiais
+        da infância.
+      </p>
 
-    <a href="#categorias" class="btn-primary-custom mt-4">
-      Explorar categorias
-    </a>
+      <a href="#categorias" class="btn-custom mt-4">
+        Explorar categorias
+      </a>
 
+    </div>
   </div>
 </section>
 
@@ -524,9 +557,8 @@ img { max-width: 100%; }
   <div class="container">
 
     <div class="section-title">
-      <small>Universo elétrico</small>
-      <h2>Principais categorias</h2>
-      <p>Categorias ilustrativas relacionadas ao setor.</p>
+      <small>Descubra nosso universo</small>
+      <h2>Escolha sua categoria</h2>
     </div>
 
     <div class="row g-4">
@@ -534,27 +566,27 @@ img { max-width: 100%; }
       <div class="col-md-4">
         <a href="#destaques" class="category">
           <img
-            src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=85"
-            alt="Materiais para instalações elétricas">
-          <span class="category-label">Materiais elétricos</span>
+            src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=900&q=85"
+            alt="Bebê e enxoval">
+          <span class="category-label">Bebês</span>
         </a>
       </div>
 
       <div class="col-md-4">
         <a href="#destaques" class="category">
           <img
-            src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=85"
-            alt="Componentes e equipamentos">
-          <span class="category-label">Componentes elétricos</span>
+            src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=900&q=85"
+            alt="Moda infantil">
+          <span class="category-label">Moda infantil</span>
         </a>
       </div>
 
       <div class="col-md-4">
         <a href="#destaques" class="category">
           <img
-            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85"
-            alt="Infraestrutura elétrica">
-          <span class="category-label">Infraestrutura</span>
+            src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=900&q=85"
+            alt="Quarto e enxoval">
+          <span class="category-label">Casa & Enxoval</span>
         </a>
       </div>
 
@@ -562,16 +594,17 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<!-- DESTAQUES -->
+<!-- VITRINE -->
 <section class="section pt-0" id="destaques">
   <div class="container">
 
     <div class="section-title">
-      <small>Vitrine de referência</small>
-      <h2>Soluções do setor elétrico</h2>
+      <small>Seleção editorial</small>
+      <h2>Inspirações especiais</h2>
+
       <p>
-        Exemplos ilustrativos, sem indicação
-        de catálogo, estoque ou preços da empresa.
+        Imagens ilustrativas. Para produtos reais,
+        preços e disponibilidade, consulte a loja oficial.
       </p>
     </div>
 
@@ -581,12 +614,12 @@ img { max-width: 100%; }
         <article class="product">
           <div class="product-image">
             <img
-              src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=700&q=85"
-              alt="Instalação elétrica">
-            <span class="product-tag">Setor elétrico</span>
+              src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=700&q=85"
+              alt="Universo do bebê">
+            <span class="product-tag">Inspiração</span>
           </div>
-          <h3>Instalações elétricas</h3>
-          <p>Componentes para diferentes projetos</p>
+          <h3>Primeiros momentos</h3>
+          <p>Delicadeza para os pequenos</p>
         </article>
       </div>
 
@@ -594,12 +627,12 @@ img { max-width: 100%; }
         <article class="product">
           <div class="product-image">
             <img
-              src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=700&q=85"
-              alt="Equipamentos técnicos">
-            <span class="product-tag">Equipamentos</span>
+              src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=700&q=85"
+              alt="Moda para crianças">
+            <span class="product-tag">Inspiração</span>
           </div>
-          <h3>Equipamentos técnicos</h3>
-          <p>Aplicações em instalações elétricas</p>
+          <h3>Moda infantil</h3>
+          <p>Estilo para a infância</p>
         </article>
       </div>
 
@@ -607,12 +640,12 @@ img { max-width: 100%; }
         <article class="product">
           <div class="product-image">
             <img
-              src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=700&q=85"
-              alt="Infraestrutura de instalações">
-            <span class="product-tag">Infraestrutura</span>
+              src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=700&q=85"
+              alt="Enxoval e decoração">
+            <span class="product-tag">Inspiração</span>
           </div>
-          <h3>Infraestrutura elétrica</h3>
-          <p>Ambientes residenciais e comerciais</p>
+          <h3>Enxoval delicado</h3>
+          <p>Conforto e aconchego</p>
         </article>
       </div>
 
@@ -620,20 +653,23 @@ img { max-width: 100%; }
         <article class="product">
           <div class="product-image">
             <img
-              src="https://images.unsplash.com/photo-1581092335878-2d9ff86ca2bf?auto=format&fit=crop&w=700&q=85"
-              alt="Tecnologia e controle">
-            <span class="product-tag">Tecnologia</span>
+              src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=700&q=85"
+              alt="Momentos da infância">
+            <span class="product-tag">Inspiração</span>
           </div>
-          <h3>Tecnologia e controle</h3>
-          <p>Referências de sistemas elétricos</p>
+          <h3>Momentos especiais</h3>
+          <p>Carinho em cada detalhe</p>
         </article>
       </div>
 
     </div>
 
     <div class="text-center mt-5">
-      <a href="#sobre" class="btn-primary-custom">
-        Conhecer a empresa
+      <a href="https://www.paoladavinci.com.br/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn-custom">
+        Visitar loja oficial
       </a>
     </div>
 
@@ -647,34 +683,34 @@ img { max-width: 100%; }
 
       <div class="col-lg-6">
         <img
-          src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85"
-          alt="Ambiente técnico e industrial">
+          src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1200&q=85"
+          alt="Bebê em ambiente acolhedor">
       </div>
 
       <div class="col-lg-6">
         <div class="editorial-text">
 
-          <small>Instalações e infraestrutura</small>
+          <small>Infância e afeto</small>
 
           <h2>
-            Conectando<br>
-            possibilidades.
+            Pequenos detalhes,<br>
+            grandes memórias.
           </h2>
 
           <p>
-            Materiais elétricos fazem parte de projetos
-            de construção, reforma, manutenção
-            e infraestrutura.
+            A infância é marcada por descobertas,
+            aconchego e momentos que ficam
+            guardados para sempre.
           </p>
 
           <p>
-            Componentes e equipamentos adequados
-            contribuem para instalações planejadas
-            e aplicações técnicas em diferentes ambientes.
+            A moda infantil e o enxoval acompanham
+            essas experiências com delicadeza,
+            conforto e beleza.
           </p>
 
-          <a href="#sobre" class="btn-primary-custom mt-3">
-            Informações institucionais
+          <a href="#sobre" class="btn-custom mt-3">
+            Conhecer a inspiração
           </a>
 
         </div>
@@ -683,7 +719,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<!-- SEGMENTOS -->
+<!-- BENEFÍCIOS EDITORIAIS -->
 <section class="section">
   <div class="container">
 
@@ -691,34 +727,25 @@ img { max-width: 100%; }
 
       <div class="col-md-4">
         <div class="benefit">
-          <i class="bi bi-lightning-charge"></i>
-          <h3>Materiais elétricos</h3>
-          <p>
-            Referências de materiais utilizados
-            em instalações elétricas.
-          </p>
+          <i class="bi bi-heart"></i>
+          <h3>Carinho em cada detalhe</h3>
+          <p>Inspirações para os momentos mais especiais da infância.</p>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="benefit">
-          <i class="bi bi-tools"></i>
-          <h3>Projetos e manutenção</h3>
-          <p>
-            Componentes relacionados à instalação
-            e manutenção de sistemas elétricos.
-          </p>
+          <i class="bi bi-stars"></i>
+          <h3>Estilo delicado</h3>
+          <p>Uma estética suave e atemporal para moda infantil.</p>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="benefit">
-          <i class="bi bi-building-gear"></i>
-          <h3>Infraestrutura</h3>
-          <p>
-            Soluções técnicas presentes em
-            ambientes residenciais e comerciais.
-          </p>
+          <i class="bi bi-house-heart"></i>
+          <h3>Casa & aconchego</h3>
+          <p>Referências de enxoval e ambientes acolhedores.</p>
         </div>
       </div>
 
@@ -731,39 +758,39 @@ img { max-width: 100%; }
   <div class="container">
 
     <div class="section-title">
-      <small>Dados cadastrais fornecidos</small>
-      <h2>47Elétrica S.A.</h2>
+      <small>Marca de referência</small>
+      <h2>Paola da Vinci</h2>
     </div>
 
     <div class="row justify-content-center">
       <div class="col-lg-10 text-center">
 
         <p>
-          A <strong>47Elétrica S.A.</strong>,
-          inscrita no CNPJ sob o número
-          <strong>46.519.785/0001-04</strong>,
-          possui estabelecimento localizado na
-          cidade de Rio do Sul, no estado de
-          Santa Catarina.
+          A <strong>Paola da Vinci</strong> é uma marca
+          brasileira associada ao universo da moda infantil,
+          enxoval e artigos para casa, com uma proposta
+          voltada à delicadeza e ao cuidado com os detalhes.
         </p>
 
         <p>
-          Conforme as informações fornecidas,
-          a empresa foi fundada em
-          <strong>24 de maio de 2022</strong>
-          e possui como atividade principal
-          o <strong>comércio varejista de
-          material elétrico</strong>,
-          classificado no CNAE
-          <strong>47.42-3-00</strong>.
+          Segundo sua apresentação institucional,
+          a marca possui uma trajetória iniciada em
+          <strong>1978</strong>.
         </p>
 
         <p>
-          Sua situação cadastral foi informada
-          como <strong>ativa</strong>.
-          Esta página apresenta essas informações
-          em um modelo demonstrativo independente.
+          Esta página utiliza o segmento da marca
+          apenas como referência criativa.
+          Não possui vínculo comercial declarado
+          com a Paola da Vinci e não realiza vendas.
         </p>
+
+        <a href="https://www.paoladavinci.com.br/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn-custom mt-3">
+          Acessar site oficial
+        </a>
 
       </div>
     </div>
@@ -772,52 +799,27 @@ img { max-width: 100%; }
 
       <div class="col-md-6">
         <div class="info-box">
-          <h3>Identificação empresarial</h3>
-
-          <p>
-            <strong>Razão social:</strong><br>
-            47Elétrica S.A.
-          </p>
-
-          <p>
-            <strong>CNPJ:</strong><br>
-            46.519.785/0001-04
-          </p>
-
-          <p>
-            <strong>Data de abertura:</strong><br>
-            24/05/2022
-          </p>
-
-          <p>
-            <strong>Situação cadastral informada:</strong><br>
-            Ativa
-          </p>
+          <h3>Universo da marca</h3>
+          <p><strong>Marca de referência:</strong> Paola da Vinci</p>
+          <p><strong>Segmento:</strong> Moda infantil e enxoval</p>
+          <p><strong>Outras categorias:</strong> Artigos para casa</p>
+          <p><strong>Trajetória informada:</strong> Desde 1978</p>
         </div>
       </div>
 
       <div class="col-md-6">
         <div class="info-box">
-          <h3>Atividade e localização</h3>
-
-          <p>
-            <strong>Atividade principal:</strong><br>
-            Comércio varejista de material elétrico
-          </p>
-
-          <p>
-            <strong>CNAE:</strong><br>
-            47.42-3-00
-          </p>
-
-          <p>
-            <strong>Município:</strong><br>
-            Rio do Sul — Santa Catarina
-          </p>
-
-          <p>
-            <strong>CEP:</strong><br>
-            89162-875
+          <h3>Informações do modelo</h3>
+          <p><strong>Nome da vitrine:</strong> Petit Maison</p>
+          <p><strong>Finalidade:</strong> Demonstração de layout</p>
+          <p><strong>Vendas:</strong> Não disponíveis</p>
+          <p><strong>Pagamentos:</strong> Não disponíveis</p>
+          <p><strong>Site oficial de referência:</strong>
+            <a href="https://www.paoladavinci.com.br/"
+               target="_blank"
+               rel="noopener noreferrer">
+              paoladavinci.com.br
+            </a>
           </p>
         </div>
       </div>
@@ -836,18 +838,18 @@ img { max-width: 100%; }
     <div class="row g-4">
 
       <div class="col-lg-4 col-md-6">
-        <h4>47Elétrica S.A.</h4>
+        <h4>Petit Maison</h4>
 
         <p>
-          Página institucional demonstrativa
-          relacionada ao comércio varejista
-          de materiais elétricos.
+          Vitrine demonstrativa independente
+          dedicada ao universo da moda infantil,
+          enxoval e artigos para casa.
         </p>
 
         <p>
-          Conteúdo informativo baseado nos dados
-          empresariais fornecidos, sem representação
-          de canal oficial de vendas ou atendimento.
+          Este modelo não representa uma loja oficial,
+          canal de atendimento ou operação comercial
+          da Paola da Vinci.
         </p>
       </div>
 
@@ -857,32 +859,40 @@ img { max-width: 100%; }
         <ul>
           <li><a href="#inicio">Início</a></li>
           <li><a href="#categorias">Categorias</a></li>
-          <li><a href="#destaques">Destaques</a></li>
-          <li><a href="#editorial">Setor elétrico</a></li>
-          <li><a href="#sobre">A empresa</a></li>
-          <li><a href="#contato">Dados cadastrais</a></li>
+          <li><a href="#destaques">Inspirações</a></li>
+          <li><a href="#editorial">Coleção editorial</a></li>
+          <li><a href="#sobre">Institucional</a></li>
+          <li>
+            <a href="https://www.paoladavinci.com.br/"
+               target="_blank"
+               rel="noopener noreferrer">
+              Loja oficial de referência
+            </a>
+          </li>
         </ul>
       </div>
 
       <div class="col-lg-4 col-md-6">
-        <h4>Dados empresariais</h4>
+        <h4>Referência institucional</h4>
 
         <p>
-          <strong>47ELÉTRICA S.A.</strong><br>
-          CNPJ: 46.519.785/0001-04<br>
-          Rodovia BR-470, 5350, Galpão 21<br>
-          Valada Itoupava<br>
-          Rio do Sul — SC<br>
-          CEP: 89162-875
+          <strong>Paola da Vinci</strong><br>
+          Moda infantil, enxoval e artigos para casa.
         </p>
 
         <p>
-          <strong>Atividade principal:</strong><br>
-          Comércio varejista de material elétrico
+          Site oficial:<br>
+          <a href="https://www.paoladavinci.com.br/"
+             target="_blank"
+             rel="noopener noreferrer">
+            www.paoladavinci.com.br
+          </a>
         </p>
 
         <p>
-          <strong>CNAE:</strong> 47.42-3-00
+          Dados jurídicos e informações de atendimento
+          devem ser consultados diretamente
+          nos canais oficiais da marca.
         </p>
       </div>
 
@@ -890,18 +900,13 @@ img { max-width: 100%; }
 
     <div class="copyright">
       <p>
-        © 2026 — Modelo institucional demonstrativo independente.
-      </p>
-
-      <p>
-        Empresa de referência: 47ELÉTRICA S.A. —
-        CNPJ 46.519.785/0001-04.
+        © 2026 Petit Maison — Modelo demonstrativo independente.
       </p>
 
       <p class="mb-0">
-        Este modelo não é um site oficial da empresa.
-        Marcas e identidades corporativas pertencem
-        aos respectivos titulares.
+        Paola da Vinci é uma marca de seus respectivos titulares.
+        Este projeto não possui afiliação oficial declarada.
+        Imagens utilizadas apenas para fins ilustrativos.
       </p>
     </div>
 
@@ -922,18 +927,17 @@ document.getElementById("searchForm")
     if (!termo) return;
 
     const palavras = [
-      "material",
-      "materiais",
-      "eletrico",
-      "elétrico",
-      "eletrica",
-      "elétrica",
-      "instalacao",
-      "instalação",
-      "infraestrutura",
-      "energia",
-      "equipamentos",
-      "componentes"
+      "bebe",
+      "bebê",
+      "infantil",
+      "moda",
+      "enxoval",
+      "casa",
+      "roupas",
+      "vestido",
+      "maternidade",
+      "acessorios",
+      "acessórios"
     ];
 
     const encontrou = palavras.some(
@@ -946,8 +950,8 @@ document.getElementById("searchForm")
         .scrollIntoView({ behavior: "smooth" });
     } else {
       alert(
-        "Esta é uma página demonstrativa. " +
-        "Não existe um catálogo comercial integrado."
+        "Esta é uma vitrine demonstrativa. " +
+        "Para pesquisar produtos reais, consulte a loja oficial."
       );
     }
 
